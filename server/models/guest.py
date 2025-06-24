@@ -7,4 +7,4 @@ class Guest(db.Model):
     name = db.Column(db.String)
     occupation = db.Column(db.String)
 
-    appearances = db.relationship('Appearance', back-populates = 'guest')
+    appearances = db.relationship('Appearance', back-populates = 'guest', cascade = 'all,delete-orphan')

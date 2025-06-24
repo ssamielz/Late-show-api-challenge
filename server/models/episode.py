@@ -6,3 +6,6 @@ class Episode(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String)
     number = db.Column(db.String)
+
+    appearances = db.relationship('Appearance', back-populates='episode', cascade = 'all,delete-orphan')
+

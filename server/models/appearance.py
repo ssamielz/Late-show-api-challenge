@@ -9,5 +9,5 @@ class Appearance(db.Model):
     episode_id = db.Column(db.String, db.ForeignKey('episodes.id'))
 
     guest = db.relationship('Guest', back-populates='appearances')
-
+    episode = db.relationship('Episode', back-populates='appearances')
     
