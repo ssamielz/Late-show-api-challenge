@@ -44,18 +44,23 @@ flask db upgrade
 python server/seed.py
 
 🔐 Authentication Flow
+
 Register
+
 POST /register
 {
   "username": "john",
   "password": "doe123"
 }
+
 Login
+
 POST /login
 {
   "username": "john",
   "password": "doe123"
 }
+
 Response:
 
 {
@@ -65,23 +70,28 @@ Use the token for protected routes:
 
 Authorization: Bearer <access_token>
 
-🚀 API Routes
-Method	Endpoint	Auth Required?	Description
-POST	/register	❌	Register a new user
-POST	/login	❌	Login and receive a JWT token
-GET	/episodes	❌	List all episodes
-GET	/episodes/int:id	❌	Get an episode and its appearances
-DELETE	/episodes/int:id	✅	Delete an episode and appearances
-GET	/guests	❌	List all guests
-POST	/appearance	✅	Create a new appearance
+| Method | Endpoint             | Auth Required? | Description                           |
+| ------ | -------------------- | -------------- | ------------------------------------- |
+| POST   | `/register`          | ❌              | Register a new user                   |
+| POST   | `/login`             | ❌              | Login and receive a JWT token         |
+| GET    | `/episodes`          | ❌              | List all episodes                     |
+| GET    | `/episodes/<int:id>` | ❌              | Get an episode and its appearances    |
+| DELETE | `/episodes/<int:id>` | ✅              | Delete an episode and its appearances |
+| GET    | `/guests`            | ❌              | List all guests                       |
+| POST   | `/appearance`        | ✅              | Create a new appearance               |
+
 
 🧪 Testing
+
 Run tests with Pytest
 pytest
+
 Auth routes tested (/register, /login)
+
 Uses in-memory SQLite for test isolation
 
 📬 Postman
+
 Import challenge-4-lateshow.postman_collection.json into Postman.
 
 Includes Register, Login, Protected routes
