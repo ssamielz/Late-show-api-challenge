@@ -9,6 +9,11 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-jwt-extended = "*"
 psycopg2-binary = "*"
+pipenv = "*"
+shell = "*"
+sqlalchemy-serializer = "*"
+faker = "*"
+flask-restful = "*"
 
 [dev-packages]
 
